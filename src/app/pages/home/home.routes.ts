@@ -27,15 +27,5 @@ export const ROUTES: Route[] = [
         component: GuestbookComponent
       }
     ]
-  },
-  {
-    path: 'about',
-    title: 'About',
-    loadComponent:  async () => (await import('./shared/about/about.component')).AboutComponent,
-  },
-  {
-    path: 'blog',
-    title: 'blogs',
-    loadComponent:  async () => (await import('./shared/articles/articles.component')).ArticlesComponent,
   }
 ];

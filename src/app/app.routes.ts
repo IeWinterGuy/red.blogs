@@ -4,7 +4,7 @@ import { AuthGuard, NoAuthGuard } from '@lib/guards';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'red',
     pathMatch: 'full',
   },
   {
@@ -13,7 +13,7 @@ export const routes: Routes = [
     canLoad: [NoAuthGuard],
   },
   {
-    path: 'home',
+    path: 'red',
     loadChildren: async () => (await import('@pages/home/home.routes')).ROUTES,
     canLoad: [AuthGuard],
   },

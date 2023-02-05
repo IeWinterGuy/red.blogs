@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router';
 import { FooterComponent, NavbarComponent } from '@lib/components';
 
 @Component({
-  selector: 'app-layout-horizontal',
+  selector: 'layout',
   standalone: true,
   imports: [CommonModule, NavbarComponent, FooterComponent, RouterModule],
   templateUrl: './layout.component.html',
