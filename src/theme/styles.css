@@ -1,15 +1,19 @@
 /* base */
 @import './tailwindcss/base.css';
-@import './01-base/variables.css';
-@import './01-base/document.css';
-@import './01-base/font.css';
-@import './01-base/heading.css';
+@import './base/variables.css';
+@import './base/document.css';
+@import './base/font.css';
+@import './base/heading.css';
 
 /* components */
 @import './tailwindcss/components.css';
-@import './02-components/link.css';
-@import './02-components/button.css';
+@import './components/link.css';
+@import './components/button.css';
 
 /* utilities */
 @import './tailwindcss/utilities.css';
-@import './03-utilities/border.css';
+@import './utilities/border.css';
+
+body {
+  background: white;
+}

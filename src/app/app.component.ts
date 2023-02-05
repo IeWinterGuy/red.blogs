@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router';
 import { AuthService } from '@lib/services';
 import { ThemeService } from '@lib/services/theme';
 import { Observable } from 'rxjs';
-import { LayoutHorizontalComponent } from './lib/components/layouts/layout-horizontal/layout-horizontal.component';
+import { LayoutHorizontalComponent } from './lib/components/layouts/layout/layout.component';
 
 @Component({
   selector: 'app-root',

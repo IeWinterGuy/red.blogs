@@ -6,8 +6,8 @@ import { FooterComponent, NavbarComponent } from '@lib/components';
   selector: 'app-layout-horizontal',
   standalone: true,
   imports: [CommonModule, NavbarComponent, FooterComponent],
-  templateUrl: './layout-horizontal.component.html',
-  styleUrls: ['./layout-horizontal.component.css'],
+  templateUrl: './layout.component.html',
+  styleUrls: ['./layout.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LayoutHorizontalComponent {}

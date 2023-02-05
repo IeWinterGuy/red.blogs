@@ -1,62 +1,62 @@
-<section>
-  <h1>Home</h1>
 
-  <h2 class="mb-4">Choose your theme</h2>
+<section class="flex gap-3">
+  <aside class="md:w-[150px] md:flex-shrink-0 -mx-4 md:mx-0 md:px-0 font-serif">
+    <div class="lg:sticky lg:top-20">
+      <div class="ml-2 md:ml-[2px] mb-2 px-4 md:px-0 md:mb-8 space-y-10 flex flex-col md:flex-row items-start">
+        <a aria-label="Lee Robinson" href="/">
+          <span class="font-sans text-6xl font-thin">Red.</span>
+        </a>
+      </div>
+      <nav
+        class="relative flex flex-row items-start px-4 pb-0 overflow-scroll md:flex-col md:px-0 fade md:overflow-auto scroll-pr-6 md:relative"
+        id="nav">
+        <div class="flex flex-row pr-10 mt-2 mb-2 space-x-0 md:flex-col md:mt-0">
+          <div class="hidden md:block">
+            <div class="absolute bg-neutral-100 dark:bg-neutral-800 h-[34px] rounded-md z-[-1]"
+              style="opacity: 1; transform: none; width: 64px; transform-origin: 50% 50% 0px"></div>
+          </div>
+          <div class="block md:hidden">
+            <div class="absolute bg-neutral-100 dark:bg-neutral-800 h-[34px] rounded-md z-[-1]"
+              style="opacity: 1; transform: none; width: 64px; transform-origin: 50% 50% 0px"></div>
+          </div>
+          <a class="
+              transition-all
+              hover:text-neutral-800
+              dark:hover:text-neutral-200
+              py-[5px]
+              px-[10px]
+              font-bold
+            " routerLink="">home</a>
+          <a class="
+              transition-all
+              hover:text-neutral-800
+              dark:hover:text-neutral-200
+              py-[5px]
+              px-[10px]
+              text-neutral-500
+            " routerLink="about" routerLinkActive="active">about</a>
+          <a class="
+              transition-all
+              hover:text-neutral-800
+              dark:hover:text-neutral-200
+              py-[5px]
+              px-[10px]
+              text-neutral-500
+            " routerLink="blog" routerLinkActive="active">blog</a>
+          <a class="
+              transition-all
+              hover:text-neutral-800
+              dark:hover:text-neutral-200
+              py-[5px]
+              px-[10px]
+              text-neutral-500
+            " routerLink="guestbook" routerLinkActive="active">guestbook</a>
+        </div>
+      </nav>
+    </div>
+  </aside>
+  <main class="flex flex-col flex-auto min-w-0 px-2 mt-6 md:mt-0 md:px-0">
+    <router-outlet></router-outlet>
 
-  <div class="flex flex-wrap gap-3 mb-6">
-    <button
-      class="min-w-[150px] btn {{currentTheme === 'system' ? 'btn-primary' : 'btn-secondary'}}"
-      (click)="handleThemeChange('system')"
-    >
-      <!-- prettier-ignore -->
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-      System
-    </button>
-    <button
-      class="min-w-[150px] btn {{currentTheme === 'light' ? 'btn-primary' : 'btn-secondary'}}"
-      (click)="handleThemeChange('light')"
-    >
-      <!-- prettier-ignore -->
-      <svg class="w-6 h-6 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
-      Light
-    </button>
-    <button
-      class="min-w-[150px] btn {{currentTheme === 'dark' ? 'btn-primary' : 'btn-secondary'}}"
-      (click)="handleThemeChange('dark')"
-    >
-      <!-- prettier-ignore -->
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
-      Dark
-    </button>
-  </div>
-
-  <div class="mt-12">
-    <h3 class="h5">Settings</h3>
-    <ul>
-      <li>
-        <a class="text-sm link" routerLink="/settings/accessibility"> Accessibility </a>
-      </li>
-      <li>
-        <a class="text-sm link" routerLink="/settings/account"> Account </a>
-      </li>
-      <li>
-        <a class="text-sm link" routerLink="/settings/appearance"> Appearance </a>
-      </li>
-    </ul>
-  </div>
-
-  <div class="mt-6">
-    <h3 class="h5">Profiles</h3>
-    <ul>
-      <li>
-        <a class="text-sm link" routerLink="/maria" text-sm> Maria </a>
-      </li>
-      <li>
-        <a class="text-sm link" routerLink="/pedro" text-sm> Pedro </a>
-      </li>
-      <li>
-        <a class="text-sm link" routerLink="/sara" text-sm> Sara </a>
-      </li>
-    </ul>
-  </div>
+  </main>
 </section>
