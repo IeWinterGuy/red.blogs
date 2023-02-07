@@ -6,10 +6,21 @@ import { ThemeService } from '@lib/services/theme';
 import { Observable } from 'rxjs';
 import { LayoutHorizontalComponent } from './lib/components/layout/layout.component';
 
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+
+
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterModule, LayoutHorizontalComponent],
+  imports: [CommonModule, RouterModule, LayoutHorizontalComponent,
+    AngularFireModule,
+    AngularFirestoreModule, // firestore
+    AngularFireAuthModule, // auth
+    AngularFireStorageModule, // storage
+  ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })

@@ -21,6 +21,7 @@ export class HomePage implements OnInit, OnDestroy {
     this._themeService.currentTheme$
       .pipe(takeUntil(this._destroy$))
       .subscribe((theme) => (this.currentTheme = theme));
+      this.handleThemeChange('light')
   }
 
   ngOnDestroy(): void {
