@@ -2,3 +2,7 @@ html {
   @apply font-body;
   @apply font-light;
 }
+
+.pop {
+  font-family: 'Poppins', sans-serif;
+}
