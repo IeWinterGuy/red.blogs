@@ -15,5 +15,5 @@
 @import './utilities/border.css';
 
 body {
-  background: white;
+  @apply bg-white
 }
