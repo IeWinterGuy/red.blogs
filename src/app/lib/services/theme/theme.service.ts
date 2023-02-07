@@ -10,14 +10,11 @@ import { AppTheme } from './theme.config';
   providedIn: 'root',
 })
 export class ThemeService implements OnDestroy {
-  //#region attributes
   currentTheme$ = new BehaviorSubject<AppTheme | null>(this._storedTheme);
 
   private _destroy$ = new Subject();
   private readonly _mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-  //#endregion
 
-  //#region accessors
   public get currentTheme(): AppTheme | null {
     return this.currentTheme$.getValue();
   }
@@ -33,7 +30,6 @@ export class ThemeService implements OnDestroy {
   private set _storedTheme(theme: AppTheme | null) {
     storage.setItem('App/theme', theme as AppTheme);
   }
-  //#endregion
 
   constructor(@Inject(DOCUMENT) private _document: Document) {}
 

@@ -7,7 +7,7 @@ import { RedComponent } from './shared/red/red.component';
 export const ROUTES: Route[] = [
   {
     path: '',
-    title: 'Home',
+    title: 'Red.Archives',
     loadComponent: async () => (await import('./home.page')).HomePage,
     children: [
       {
