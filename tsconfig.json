@@ -23,7 +23,10 @@
       "@lib/*": ["src/app/lib/*"],
       "@pages/*": ["src/app/pages/*"],
       "@env/*": ["src/environments/*"]
-    }
+    },
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
