@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { AppTheme, ThemeService } from '@lib/services/theme';
 import { Subject, takeUntil } from 'rxjs';
 
@@ -15,13 +15,17 @@ export class HomePage implements OnInit, OnDestroy {
 
   private _destroy$ = new Subject();
 
-  constructor(private _themeService: ThemeService) {}
+  constructor(private _themeService: ThemeService, private router: Router) {}
 
   ngOnInit(): void {
     this._themeService.currentTheme$
       .pipe(takeUntil(this._destroy$))
       .subscribe((theme) => (this.currentTheme = theme));
       this.handleThemeChange('light')
+
+    if(this.router.url == ('/archives')) {
+      this.router.navigate(['/archives/home'])
+    }
   }
 
   ngOnDestroy(): void {

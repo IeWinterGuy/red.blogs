@@ -11,6 +11,10 @@ export const ROUTES: Route[] = [
     loadComponent: async () => (await import('./home.page')).HomePage,
     children: [
       {
+        path: '',
+        component: RedComponent,
+      },
+      {
         path: 'home',
         component: RedComponent
       },
@@ -23,7 +27,7 @@ export const ROUTES: Route[] = [
         component: ArticlesComponent
       },
       {
-        path: 'guestbook',
+        path: 'support',
         component: GuestbookComponent
       }
     ]

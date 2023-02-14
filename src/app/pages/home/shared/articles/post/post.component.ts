@@ -24,7 +24,6 @@ export class PostComponent implements OnInit {
   ngOnInit(): void {
     this.postMapper.mapPublicationHighlights(this.userNotesAndArticlesInfo).then((res) => {
       this.publicationHighlights = res;
-      console.log(res)
     })
   }
 
