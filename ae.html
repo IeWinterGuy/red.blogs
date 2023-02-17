@@ -1,0 +1,235 @@
+<div class="flex mx-auto overflow-hidden bg-white">
+  <div class="flex items-center w-full">
+    <div class="flex flex-col w-full">
+      <div>
+        <div class="flex flex-col flex-grow p-2 my-2 rounded bg-blue-50">
+          <div class="flex flex-row justify-between">
+            <div class="flex flex-col mt-1 mb-2">
+              <div class="text-sm font-normal text-gray-800">
+                {{ publicationHighlights.author }}
+              </div>
+              <span class="text-sm font-normal text-gray-500">@saralaw9</span>
+              <div class="w-1/2 my-4 mb-1 border-b"></div>
+              <div class="flex w-full mt-1">
+                <div class="mr-1 text-xs text-blue-700 cursor-pointer font-base">UX Design</div>
+                <div
+                  class="mr-1 text-xs cursor-pointer font-base hover:text-neutral-800 dark:hover:text-neutral-200 text-neutral-500">
+                  • {{ publicationHighlights.time }}</div>
+              </div>
+            </div>
+            <div class="flex rounded-full">
+              <span
+                class="w-8 h-8 text-center text-gray-400 transition duration-300 ease-out rounded-full cursor-pointer swap hover:text-white hover:bg-slate-500"
+                aria-label="share">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="w-5 h-5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 15l6-6m0 0l-6-6m6 6H9a6 6 0 000 12h3" />
+                </svg>
+              </span>
+            </div>
+          </div>
+          <p class="mt-1 text-sm">{{ publicationHighlights.content }}</p>
+        </div>
+        <div class="m-6 mx-0 overflow-hidden text-sm font-medium text-gray-400 rounded max-h-96">
+          <img class="rounded" src="{{ publicationHighlights.imgUrl }}" />
+        </div>
+        <div class='px-2 mx-3 mb-2 text-lg font-semibold text-gray-600'>{{ publicationHighlights.header }}</div>
+        <div class="flex justify-between mx-4 mb-4 ">
+          <div class="flex flex-col justify-between rounded">
+            <div class="flex flex-row justify-between w-full p-2">
+              <div class="flex justify-between w-full gap-2">
+                <div class="flex items-center text-sm font-normal text-gray-700 rounded">
+                  Likes:
+                  <div class="ml-1 text-gray-400 font-base text-ms">120k</div>
+                </div>
+                <div class="flex items-center text-sm font-normal text-gray-700 rounded">
+                  Comments:
+                  <div class="ml-1 text-gray-400 font-base text-ms">30</div>
+                </div>
+              </div>
+            </div>
+            <div class="flex justify-between w-2/3">
+              <label
+                class="w-8 h-8 text-center text-gray-400 transition duration-300 ease-out rounded-full cursor-pointer swap hover:text-orange-500 hover:bg-orange-100"
+                aria-label="like">
+                <input type="checkbox" />
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="w-5 h-5 swap-on">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="w-5 h-5 text-orange-500 fill-orange-500 swap-off">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                </svg>
+              </label>
+              <span
+                class="w-8 h-8 text-center text-gray-400 transition duration-300 ease-out bg-white rounded-full cursor-pointer swap hover:text-black hover:bg-slate-100"
+                aria-label="comments">
+                <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="w-5 h-5">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z" />
+                </svg> -->
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="w-5 h-5">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M2.25 12.76c0 1.6 1.123 2.994 2.707 3.227 1.068.157 2.148.279 3.238.364.466.037.893.281 1.153.671L12 21l2.652-3.978c.26-.39.687-.634 1.153-.67 1.09-.086 2.17-.208 3.238-.365 1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" />
+                </svg>
+              </span>
+              <label
+                class="w-8 h-8 text-center text-gray-400 transition duration-300 ease-out bg-white rounded-full cursor-pointer swap hover:text-blue hover:bg-violet-100"
+                aria-label="bookmark">
+                <input type="checkbox" />
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="w-5 h-5 swap-on">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  class="w-5 h-5 swap-off fill-violet-500">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                </svg>
+              </label>
+            </div>
+          </div>
+          <div class="flex flex-col justify-between rounded-full">
+            <span
+              class="invisible w-8 h-8 text-center text-gray-400 transition duration-300 ease-out rounded-full cursor-pointer swap hover:text-white hover:bg-slate-100"
+              aria-label="share">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+              </svg>
+
+            </span>
+            <span
+              class="w-8 h-8 text-center text-gray-400 transition duration-300 ease-out rounded-full cursor-pointer swap hover:text-red-500 hover:bg-red-50"
+              aria-label="share">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+      <!-- component -->
+      <div class="relative flex justify-center top-1/3" *ngIf="false">
+        <!-- This is an example component -->
+        <div class="relative grid grid-cols-1 gap-4 p-4 mb-8 bg-white border rounded-lg">
+          <div class="relative flex gap-4">
+            <img src="https://icons.iconarchive.com/icons/diversity-avatars/avatars/256/charlie-chaplin-icon.png"
+              class="relative w-20 h-20 -mb-4 bg-white border rounded-lg -top-8" alt="" loading="lazy">
+            <div class="flex flex-col w-full">
+              <div class="flex flex-row justify-between">
+                <p class="relative overflow-hidden text-xl truncate whitespace-nowrap">COMMENTOR</p>
+                <a class="text-xl text-gray-500" href="#"><i class="fa-solid fa-trash"></i></a>
+              </div>
+              <p class="text-sm text-gray-400">20 April 2022, at 14:88 PM</p>
+            </div>
+          </div>
+          <p class="-mt-4 text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Maxime quisquam
+            vero adipisci beatae voluptas dolor ame.</p>
+        </div>
+
+
+
+      </div>
+      <!-- component -->
+      <div class="max-w-screen-sm mx-auto antialiased">
+        <!-- <span class="mb-4 text-sm text-gray-900 font-base">Comments</span> -->
+
+        <div class="space-y-4">
+
+          <div class="flex">
+            <!-- <div class="flex-shrink-0 mr-3">
+        <img class="w-8 h-8 mt-2 rounded-full sm:w-8 sm:h-8" src="https://images.unsplash.com/photo-1604426633861-11b2faead63c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80" alt="">
+      </div> -->
+            <div class="flex-1 px-4 py-2 leading-relaxed rounded sm:px-6 sm:py-4 bg-blue-50">
+              <div class="flex justify-between mb-2 gap-x-2">
+                <span class="text-base font-normal text-gray-800">@sarah</span>
+                <span class="text-xs text-gray-600">3:34 PM</span>
+              </div>
+
+              <p class="text-sm">
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                magna aliquyam erat, sed diam voluptua.
+              </p>
+              <div class="flex items-center mt-4">
+                <div class="flex mr-2 -space-x-2">
+                  <img class="w-6 h-6 border border-white rounded-full"
+                    src="https://images.unsplash.com/photo-1554151228-14d9def656e4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=100&h=100&q=80"
+                    alt="">
+                  <img class="w-6 h-6 border border-white rounded-full"
+                    src="https://images.unsplash.com/photo-1513956589380-bad6acb9b9d4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=100&h=100&q=80"
+                    alt="">
+                </div>
+                <a class="text-sm text-gray-600 underline font-base">
+                  5 Replies
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex">
+            <!-- <div class="flex-shrink-0 mr-3">
+        <img class="w-8 h-8 mt-2 rounded-full sm:w-10 sm:h-10" src="https://images.unsplash.com/photo-1604426633861-11b2faead63c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80" alt="">
+      </div> -->
+            <div class="flex-1 px-4 py-2 leading-relaxed border rounded sm:px-6 sm:py-4">
+              <div class="flex justify-between mb-2 gap-x-2">
+                <span class="text-base font-normal text-gray-800">@sarah</span>
+                <span class="text-xs text-gray-600">3:34 PM</span>
+              </div>
+              <p class="text-sm">
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                magna aliquyam erat, sed diam voluptua.
+              </p>
+
+              <h4 class="my-5 text-xs font-bold tracking-wide text-gray-400 uppercase">Replies</h4>
+
+              <div class="space-y-4">
+                <div class="flex">
+                  <!-- <div class="flex-shrink-0 mr-3">
+              <img class="w-6 h-6 mt-3 rounded-full sm:w-8 sm:h-8" src="https://images.unsplash.com/photo-1604426633861-11b2faead63c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80" alt="">
+            </div> -->
+                  <div class="flex-1 px-4 py-2 ml-4 leading-relaxed bg-orange-100 rounded sm:px-6 sm:py-4">
+                    <div class="flex justify-between mb-2 gap-x-2">
+                      <span class="text-base font-normal text-gray-800">@shwea</span>
+                      <span class="text-xs text-gray-600">3:34 PM</span>
+                    </div>
+                    <p class="text-xs sm:text-sm">
+                      Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                      sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                      magna aliquyam erat, sed diam voluptua.
+                    </p>
+                  </div>
+                </div>
+                <div class="flex">
+                  <!-- <div class="flex-shrink-0 mr-3">
+              <img class="w-6 h-6 mt-3 rounded-full sm:w-8 sm:h-8" src="https://images.unsplash.com/photo-1604426633861-11b2faead63c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80" alt="">
+            </div> -->
+                  <div class="flex-1 px-4 py-2 ml-4 leading-relaxed bg-red-100 rounded sm:px-6 sm:py-4">
+                    <div class="flex justify-between mb-2 gap-x-2">
+                      <span class="text-base font-normal text-gray-800">@arvid</span>
+                      <span class="text-xs text-gray-600">3:34 PM</span>
+                    </div>
+                    <p class="text-xs sm:text-sm">
+                      Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                      sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                      magna aliquyam erat, sed diam voluptua.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

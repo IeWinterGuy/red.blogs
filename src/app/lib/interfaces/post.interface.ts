@@ -51,7 +51,7 @@ export interface IArticleMapper extends Highlights {
   id: string;
   username?: string | undefined;
   content_length?: string;
-  tag?: Tag[];
+  tag: Tag[];
   imgUrl?: string;
   time?: string
 }
