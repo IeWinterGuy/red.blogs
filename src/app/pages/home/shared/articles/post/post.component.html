@@ -1,47 +1,27 @@
 <div class="mb-5">
   <a href="#">
     <div class="relative overflow-hidden text-sm font-medium text-gray-400 rounded-none md:rounded max-h-96">
-      <div class="w-full ">
-        <div class="flex flex-col flex-grow rounded bordet-b border-slate-500">
-          <div class="flex flex-row items-center justify-between px-4 mb-2 md:px-0">
-            <div class="flex flex-col">
-              <p class="text-sm font-normal text-slate-500">
-                <a href="#" class="font-medium text-slate-700">
-                  {{ publicationHighlights.author }}
-                </a>
-              </p>
-              <div class="flex w-full mt-1">
-                <div class="mr-1 text-xs cursor-pointer font-base">{{ publicationHighlights.time }}</div>
-              </div>
-            </div>
-
-            <div class="flex rounded-full">
-              <span
-                class="w-8 h-8 text-center text-gray-400 transition duration-300 ease-out rounded-full cursor-pointer swap hover:text-white hover:backdrop-blue hover:bg-black/30"
-                aria-label="share">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                  stroke="currentColor" class="w-5 h-5">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 15l6-6m0 0l-6-6m6 6H9a6 6 0 000 12h3" />
-                </svg>
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
       <div class="relative">
-        <div class="absolute flex flex-wrap gap-1 px-2 mt-1 text-xs cursor-pointer font-base md:px-1">
-          <span class="px-3 py-1 text-xs font-medium text-white rounded bg-black/20 backdrop-blur-md" *ngFor="let tag of publicationHighlights.tag">
+        <div class="absolute flex flex-wrap gap-1 px-2 mt-2 text-xs cursor-pointer font-base md:px-1 md:mt-1">
+          <span class="px-3 py-1 text-xs font-medium text-white rounded bg-black/20 backdrop-blur-md"
+            *ngFor="let tag of publicationHighlights.tag">
             {{ tag.name }}
           </span>
         </div>
-        <img class="object-contain object-center w-full bg-center rounded-none md:object-contain max-h-96 md:rounded bg-gray-50"
-        src="{{ publicationHighlights.imgUrl }}" />
+        <img
+          class="object-contain object-center w-full mb-1 bg-center rounded-none md:object-contain max-h-96 md:rounded bg-gray-50"
+          src="{{ publicationHighlights.imgUrl }}" />
+
       </div>
     </div>
   </a>
+  <div class="flex w-full px-2 mt-1 text-gray-400 md:px-0">
+    <div class="mr-1 text-xs cursor-pointer font-base">{{ publicationHighlights.time }}</div>
+  </div>
   <h2 class="px-4 mt-4 mb-2 text-lg font-semibold text-gray-900 md:px-0">
     <a href="#" class="text-gray-900">{{ publicationHighlights.header }}</a>
   </h2>
+
   <p class="px-4 mb-3 text-sm font-normal text-gray-500 md:px-0">
     {{ publicationHighlights.content}}
   </p>
