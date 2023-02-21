@@ -1,7 +1,7 @@
 import { Route } from '@angular/router';
 import { AboutComponent } from './shared/about/about.component';
 import { ArticlesComponent } from './shared/articles/articles.component';
-import { GuestbookComponent } from './shared/guestbook/guestbook.component';
+import { GuestbookComponent } from './shared/preferences/guestbook.component';
 import { RedComponent } from './shared/red/red.component';
 
 export const ROUTES: Route[] = [
