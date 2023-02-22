@@ -5,6 +5,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
+import { AuthModule } from '@auth0/auth0-angular';
 
 import { AppComponent } from './app/app.component';
 
@@ -22,7 +23,13 @@ bootstrapApplication(AppComponent, {
     importProvidersFrom(
       provideFirebaseApp(() => initializeApp({ ...environment.firebaseConfig })),
       provideFirestore(() => getFirestore()),
-      AngularFireModule.initializeApp(environment.firebaseConfig)
+      AngularFireModule.initializeApp(environment.firebaseConfig),
+      AuthModule.forRoot({
+        ...environment.auth,
+        httpInterceptor: {
+          ...environment.httpInterceptor,
+        },
+      }),
     ),
     importProvidersFrom(RouterModule.forRoot(routes), HttpClientModule),
     {

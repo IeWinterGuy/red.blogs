@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DOCUMENT } from '@angular/common';
+import { Component, Inject, OnInit } from '@angular/core';
+import { AuthService } from '@auth0/auth0-angular';
 
 @Component({
   selector: 'app-guestbook',
@@ -10,9 +11,13 @@ import { CommonModule } from '@angular/common';
 })
 export class GuestbookComponent implements OnInit {
 
-  constructor() { }
+  constructor(public auth: AuthService, @Inject(DOCUMENT) private doc: Document) { }
 
   ngOnInit(): void {
+  }
+
+  logout() {
+    this.auth.logout();
   }
 
 }

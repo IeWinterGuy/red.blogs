@@ -1,6 +1,6 @@
 {
-  "domain": "motion-feeds.au.auth0.com",
-  "clientId": "EqpenwCxd7VQcb3t2PsMV95UuSmwNYV2",
+  "domain": "redsuites.eu.auth0.com",
+  "clientId": "Dnf2mls1o7HPLToJUXUsgp6RVt8scIWb",
   "audience": "YOUR_API_IDENTIFIER",
   "apiUri": "http://localhost:3001",
   "appUri": "http://localhost:4200",
