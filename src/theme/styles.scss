@@ -1,0 +1,82 @@
+/* base */
+@import './tailwindcss/base.css';
+@import './base/variables.css';
+@import './base/document.css';
+@import './base/font.css';
+@import './base/heading.css';
+
+/* components */
+@import './tailwindcss/components.css';
+@import './components/link.css';
+@import './components/button.css';
+
+/* utilities */
+@import './tailwindcss/utilities.css';
+@import './utilities/border.css';
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,700;1,100;1,200&display=swap');
+
+body {
+  @apply bg-white;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+
+//external lib
+.cdx-search-field {
+  display: none;
+}
+.ce-toolbar__actions {
+  margin-right: 0.7rem;
+}
+.ce-popover {
+  &--opened{
+    min-width: 110px;
+  }
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__item {
+    flex: 0 0 3;
+    &-icon {
+      margin: unset;
+    }
+
+    &-label{
+      display: none;
+    }
+  }
+}
+
+.cdx-button {
+  @apply flex items-center justify-center;
+  svg {
+    margin-right: 1rem;
+  }
+}
+.ce-block:first-child{
+  h1.ce-header {
+    font-size: 2rem !important;
+    font-weight: 500 !important;
+  }
+}
+
+
+.ce-paragraph{
+
+  font-size: large !important;
+  font-weight: 400 !important;
+  font-family: 'charter', Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+.ce-block__content {
+  max-width: 736px !important;
+}
+
+.ce-toolbar__actions {
+  margin-right: 2.7rem !important;
+}
+
+
+

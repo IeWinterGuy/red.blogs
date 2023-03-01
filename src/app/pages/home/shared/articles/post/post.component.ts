@@ -28,6 +28,6 @@ export class PostComponent implements OnInit {
   }
 
   public onBtnActionClicked(id: string) {
-    this.router.navigate(['/publication/publish'], { queryParams: { page: id}});
+    this.router.navigate(['/archives/post'], { queryParams: { page: id}});
   }
 }

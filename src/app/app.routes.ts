@@ -30,5 +30,5 @@ export const routes: Routes = [
   {
     path: '**',
     loadComponent: async () => (await import('@pages/screens/not-found/not-found.page')).NotFoundPage,
-  },
+  }
 ];

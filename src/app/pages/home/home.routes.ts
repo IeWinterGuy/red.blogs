@@ -2,6 +2,7 @@ import { Route } from '@angular/router';
 import { AuthGuard } from '@auth0/auth0-angular';
 import { AboutComponent } from './shared/about/about.component';
 import { ArticlesComponent } from './shared/articles/articles.component';
+import { ViewerComponent } from './shared/articles/viewer/viewer.component';
 import { GuestbookComponent } from './shared/preferences/guestbook.component';
 import { RedComponent } from './shared/red/red.component';
 
@@ -31,7 +32,10 @@ export const ROUTES: Route[] = [
         path: 'support',
         component: GuestbookComponent,
         canActivate: [AuthGuard]
-
+      },
+      {
+        path: 'post',
+        component: ViewerComponent
       }
     ]
   }

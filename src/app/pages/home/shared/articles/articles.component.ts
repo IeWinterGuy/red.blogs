@@ -25,7 +25,6 @@ export class ArticlesComponent implements OnInit {
   ngOnInit(): void {
     this.postServ.getArticlesFromFirebase().then((res) => {
       this.articles = res;
-      console.log(this.articles)
     })
   }
 
