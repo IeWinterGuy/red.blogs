@@ -11,7 +11,7 @@ import { editorjsConfigReadOnly, toolsConfig } from '../editor.config';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './viewer.component.html',
-  styleUrls: ['./viewer.component.css']
+  styleUrls: ['./viewer.component.scss']
 })
 export class ViewerComponent implements OnInit {
   public editor!: EditorJS;

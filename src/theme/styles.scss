@@ -63,12 +63,12 @@ body {
 }
 
 
-.ce-paragraph{
+// .ce-paragraph{
 
-  font-size: large !important;
-  font-weight: 400 !important;
-  font-family: 'charter', Georgia, Cambria, "Times New Roman", Times, serif;
-}
+//   font-size: large !important;
+//   font-weight: 400 !important;
+//   font-family: 'charter', Georgia, Cambria, "Times New Roman", Times, serif;
+// }
 
 .ce-block__content {
   max-width: 736px !important;
@@ -76,6 +76,10 @@ body {
 
 .ce-toolbar__actions {
   margin-right: 2.7rem !important;
+}
+
+.image-tool__caption {
+  @apply hidden #{!important};
 }
 
 
