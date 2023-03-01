@@ -15,7 +15,7 @@ export class HomePage implements OnInit, OnDestroy {
 
   private _destroy$ = new Subject();
 
-  constructor(private _themeService: ThemeService, private router: Router) {}
+  constructor(private _themeService: ThemeService, public router: Router) {}
 
   ngOnInit(): void {
     this._themeService.currentTheme$
