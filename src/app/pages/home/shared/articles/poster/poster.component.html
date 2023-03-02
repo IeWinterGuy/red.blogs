@@ -1,0 +1,69 @@
+<!-- <main class="relative flex-row-reverse items-center justify-center overflow-auto bg-white column-2 max-auto">
+  <div class="relative cards md:mr-2">
+    <div class="absolute top-0 right-0 z-40 flex items-center justify-center m-2">
+      <button class="outline-none fill-current focus-visible:outline-none btn btn-xs btn-primary min-h-fit" (click)="dialogClose()">
+        save
+      </button>
+    </div>
+    <div class="relative h-full bg-white">
+      <mat-card class="h-full w-full !shadow-none !flex !justify-center !items-cente min-h-[200px] border-dashed border border-slate-500">
+        <div class="relative flex items-center justify-center w-full rounded">
+          <img src="{{ defaultImg }}" alt="image">
+        </div>
+      </mat-card>
+    </div>
+  </div>
+  <div class="relative cards">
+    <div class="relative h-full overflow-auto bg-white rounded no-scrollbar">
+      <div class="grid-cols-1 space-y-2 lg:space-y-0 lg:grid lg:gap-2 lg:grid-rows-1">
+        <div class="relative w-full rounded" *ngFor="let img of data.imgList;let i = index">
+          <div class="checkbox-container">
+            <input type="radio" [checked]="(data.selected === img)" name="radio-btn" class="rounded-full checkbox checkbox-xs" (click)="setPosterForArticle($event, i)"/>
+          </div>
+          <img src="{{ img }}" alt="image">
+        </div>
+      </div>
+    </div>
+  </div>
+</main> -->
+<!--
+  This example requires Tailwind CSS v2.0+
+
+  This example requires some changes to your config:
+
+  ```
+  // tailwind.config.js
+  module.exports = {
+    // ...
+    plugins: [
+      // ...
+      require('@tailwindcss/aspect-ratio'),
+    ],
+  }
+  ```
+-->
+<div class="bg-white">
+  <div class="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
+    <h2 class="text-2xl font-bold tracking-tight text-gray-900">Customers also purchased</h2>
+
+    <div class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+      <div class="group relative">
+        <div class="min-h-80 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80">
+          <img src="https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg" alt="Front of men&#039;s Basic Tee in black." class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+        </div>
+        <div class="mt-4 flex justify-between">
+          <div class="grid-cols-1 space-y-2 lg:space-y-0 lg:grid lg:gap-2 lg:grid-rows-1">
+            <div class="relative w-full rounded" *ngFor="let img of data.imgList;let i = index">
+              <div class="checkbox-container">
+                <input type="radio" [checked]="(data.selected === img)" name="radio-btn" class="rounded-full checkbox checkbox-xs" (click)="setPosterForArticle($event, i)"/>
+              </div>
+              <img src="{{ img }}" alt="image">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- More products... -->
+    </div>
+  </div>
+</div>

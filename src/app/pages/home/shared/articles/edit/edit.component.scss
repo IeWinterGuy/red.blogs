@@ -1,0 +1,31 @@
+$card-snap: 820px;
+$medium: 900px;
+
+.mat-dialog-container {
+  @apply rounded-none
+}
+
+mat-card{
+  img{
+    background-repeat: no-repeat;
+  }
+}
+
+*:hover {
+  transition: all 150ms ease-in;
+}
+
+main {
+  .cards {
+    @apply w-[400px] h-[600px];
+  }
+
+  @media screen and (max-width: $card-snap) {
+    flex-direction: column-reverse;
+    .cards {
+      @apply w-full;
+    }
+  }
+}
+
+
