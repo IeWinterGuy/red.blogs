@@ -14,7 +14,7 @@ import { ArticleMapper } from '@lib/mapper/article.mapper';
 export class PostComponent implements OnInit {
   @Input()
   userNotesAndArticlesInfo: PublishNotes;
-  publicationHighlights!: IArticleMapper
+  publicationHighlights!: IArticleMapper;
 
   constructor(public postMapper: ArticleMapper, private router: Router) {
     this.userNotesAndArticlesInfo = <PublishNotes>{};
