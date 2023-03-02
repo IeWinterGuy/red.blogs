@@ -31,7 +31,7 @@ bootstrapApplication(AppComponent, {
         },
       }),
     ),
-    importProvidersFrom(RouterModule.forRoot(routes), HttpClientModule),
+    importProvidersFrom(RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled'}), HttpClientModule),
     {
       provide: HTTP_INTERCEPTORS,
       useClass: ServerErrorInterceptor,
