@@ -1,28 +1,43 @@
-<div class="mb-5">
-  <a (click)="onBtnActionClicked(publicationHighlights.id)" class="cursor-pointer">
-    <div class="relative overflow-hidden text-sm font-medium text-gray-400 rounded-none md:rounded max-h-96">
-      <div class="relative">
-        <div class="absolute flex flex-wrap gap-1 px-2 mt-2 text-xs cursor-pointer font-base md:px-1 md:mt-1">
-          <span class="px-3 py-1 text-xs font-medium text-white rounded bg-black/20 backdrop-blur-md"
-            *ngFor="let tag of publicationHighlights.tag">
-            {{ tag.name }}
-          </span>
+<div class="block w-full overflow-auto no-scrollbar">
+  <div class="flex justify-center w-full">
+    <div class="w-full max-w-4xl">
+      <div class="flex items-center justify-between w-full h-40 max-w-4xl">
+        <div class="flex text-3xl font-semibold capitalize select-none justify-evenly">
+          <button class="mr-5 border-transparent btn btn-circle btn-outline btn-md" routerLink="/article">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+            </svg>
+          </button>
+          <span class="mb-1 !text-5xl">Your Story</span>
         </div>
-        <img
-          class="object-contain object-center w-full mb-1 bg-center rounded-none md:object-contain max-h-96 md:rounded bg-gray-50"
-          src="{{ publicationHighlights.imgUrl }}" />
-
       </div>
     </div>
-  </a>
-  <div class="flex w-full px-2 mt-1 text-gray-400 md:px-0">
-    <div class="mr-1 text-xs cursor-pointer font-base">{{ publicationHighlights.time }}</div>
   </div>
-  <h2 class="px-4 mt-4 mb-2 text-lg font-semibold text-gray-900 cursor-pointer md:px-0" (click)="onBtnActionClicked(publicationHighlights.id)">
-    <a class="text-gray-900">{{ publicationHighlights.header }}</a>
-  </h2>
-
-  <p class="px-4 mb-3 text-sm font-normal text-gray-500 cursor-pointer md:px-0" (click)="onBtnActionClicked(publicationHighlights.id)">
-    {{ publicationHighlights.content}}
-  </p>
+  <div class="block w-full">
+    <div class="flex justify-center w-full">
+      <div class="w-full max-w-4xl mx-4">
+        <div class="block pb-5">
+          <mat-accordion>
+            <mat-expansion-panel hideToggle [expanded]="true" class="!shadow-none border">
+              <mat-expansion-panel-header>
+                <mat-panel-title class="items-center justify-between">
+                  <div>
+                    <span class="text-slate-400 capitalize !text-xs !font-thin pl-1" *ngIf="auth.user$ | async as user">drafted in {{user?.nickname}}</span>
+                  </div>
+                  <button class="btn btn-square btn-outline btn-sm !btn-ghost" (click)="saveEditorData(); $event.stopPropagation()" matTooltip="Post It">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
+                    </svg>
+                  </button>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <div id="editorjs" class="w-full h-auto p-2 rounded-md min-h-[100px] focus-visible:outline-none"></div>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
+

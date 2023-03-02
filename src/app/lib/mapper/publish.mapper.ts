@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { AuthService } from "@auth0/auth0-angular";
-import { BlocksEntity, IArticleMapper, IPublicationHighlights, PublishNotes, Tag } from "@core/models/interface/IPosts.model";
-import { Guid } from "@core/utils/guid.util";
+import { BlocksEntity, IArticleMapper, IPublicationHighlights, PublishNotes, Tag } from "@lib/interfaces/post.interface";
+import { Guid } from "@lib/utils/guid.util";
 
 @Injectable({
   providedIn: 'root',

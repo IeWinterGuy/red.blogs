@@ -51,7 +51,7 @@
       <label for="name" class="text-xs font-normal leading-tight tracking-normal text-black">
         Add or change topics (up to 5) so readers know what your story is about
       </label>
-      <mat-chip-list #chipList aria-label="Fruit selection">
+      <mat-chip-grid #chipList aria-label="Fruit selection">
         <mat-chip *ngFor="let fruit of tags" (removed)="remove(fruit)">
           {{fruit.name}}
           <button matChipRemove>
@@ -64,7 +64,7 @@
                [matChipInputAddOnBlur]="true"
                (matChipInputTokenEnd)="add($event)"
                [disabled]="tags.length > 4">
-      </mat-chip-list>
+      </mat-chip-grid>
       <div class="flex items-center justify-start w-full">
           <button class="px-8 py-2 text-sm text-white transition duration-150 ease-in-out bg-indigo-700 rounded focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 hover:bg-indigo-600" (click)="publishArticle()">Publish</button>
           <button class="px-8 py-2 ml-3 text-sm text-gray-600 transition duration-150 ease-in-out bg-gray-100 border rounded focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 hover:border-gray-400 hover:bg-gray-300 [disabled]='true'">Schedule for later</button>
