@@ -9,6 +9,7 @@ import { AuthModule } from '@auth0/auth0-angular';
 
 import { AppComponent } from './app/app.component';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { routes } from './app/app.routes';
 import { JwtInterceptor, ServerErrorInterceptor } from './app/lib/interceptors';
 import { environment } from './environments/environment';
@@ -29,7 +30,7 @@ bootstrapApplication(AppComponent, {
         httpInterceptor: {
           ...environment.httpInterceptor,
         },
-      }),
+      }), BrowserAnimationsModule,
     ),
     importProvidersFrom(RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled'}), HttpClientModule),
     {
