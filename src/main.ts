@@ -30,7 +30,7 @@ bootstrapApplication(AppComponent, {
         httpInterceptor: {
           ...environment.httpInterceptor,
         },
-      }), BrowserAnimationsModule,
+      }), BrowserAnimationsModule, BrowserAnimationsModule,
     ),
     importProvidersFrom(RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled'}), HttpClientModule),
     {
