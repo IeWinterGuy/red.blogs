@@ -1,12 +1,10 @@
 import { Dialog } from '@angular/cdk/dialog';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { collectionData } from '@angular/fire/firestore';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { AuthService } from '@auth0/auth0-angular';
 import EditorJS from '@editorjs/editorjs';
 import { IUser, PublishNotes } from '@lib/interfaces';
 import { CreatepostService } from '@lib/services/firebase/createpost.service';
-import { collection, Firestore } from 'firebase/firestore';
 import { debounceTime, Observable, skip } from 'rxjs';
 import { EditComponent } from '../edit/edit.component';
 import { editorjsConfig } from '../editor.config';
@@ -19,7 +17,6 @@ export class EditorComponent implements OnInit {
   public editorData: unknown;
   public editor!: EditorJS;
   public editorObserver!: MutationObserver;
-  public item$: Observable<import("@angular/fire/firestore").DocumentData[]>;
   public user!: IUser;
   private user_id!: string;
 
@@ -27,14 +24,12 @@ export class EditorComponent implements OnInit {
     user: null
   }
 
-  constructor(public firestore: Firestore,
+  constructor(
     public postserv: CreatepostService,
     public auth: AuthService,
     private _snackBar: MatSnackBar,
     private bareDialog: Dialog) {
-    const col = collection(firestore, 'items');
     this.user = <IUser>{};
-    this.item$ = collectionData(col);
 
     auth.getIdTokenClaims().subscribe((res) => {
       const user_id = (res?.['sub'] as string).split('|')[1];
