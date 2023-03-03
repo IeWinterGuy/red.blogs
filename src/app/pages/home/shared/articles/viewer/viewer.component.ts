@@ -8,8 +8,6 @@ import { editorjsConfigReadOnly, toolsConfig } from '../editor.config';
 
 @Component({
   selector: 'viewer',
-  standalone: true,
-  imports: [CommonModule],
   templateUrl: './viewer.component.html',
   styleUrls: ['./viewer.component.scss']
 })

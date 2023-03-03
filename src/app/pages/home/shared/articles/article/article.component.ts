@@ -6,8 +6,6 @@ import { ArticleMapper } from '@lib/mapper/article.mapper';
 
 @Component({
   selector: 'article',
-  standalone: true,
-  imports: [CommonModule],
   templateUrl: './article.component.html',
   styleUrls: ['./article.component.scss']
 })

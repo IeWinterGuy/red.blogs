@@ -1,24 +1,16 @@
 import { Dialog, DialogRef, DIALOG_DATA } from '@angular/cdk/dialog';
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
-import { CommonModule } from '@angular/common';
 import { Component, Inject, OnInit } from '@angular/core';
-import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
 import { MatChipInputEvent } from '@angular/material/chips';
 import { Router } from '@angular/router';
 import { IPublicationHighlights, PublishNotes, Tag } from '@lib/interfaces';
 import { PublishMapper } from '@lib/mapper/publish.mapper';
-import { MaterialModule } from '@lib/material/material.module';
 import { CreatepostService } from '@lib/services/firebase/createpost.service';
 import { PosterComponent } from '../poster/poster.component';
 
 @Component({
   templateUrl: './edit.component.html',
-  standalone: true,
-  imports: [
-    CommonModule,
-    MaterialModule,
-    ReactiveFormsModule
-  ],
   styleUrls: ['./edit.component.scss'],
 })
 export class EditComponent implements OnInit {

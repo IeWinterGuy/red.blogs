@@ -1,5 +1,6 @@
 import { Dialog } from '@angular/cdk/dialog';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { collectionData } from '@angular/fire/firestore';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -15,8 +16,6 @@ import { editorjsConfig } from '../editor.config';
 
 @Component({
   selector: 'post',
-  standalone: true,
-  imports: [CommonModule, MaterialModule],
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.css']
 })

@@ -1,11 +1,11 @@
 import { DialogRef, DIALOG_DATA } from '@angular/cdk/dialog';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { Component, Inject, OnInit } from '@angular/core';
+import { MaterialModule } from '@lib/material/material.module';
 
 @Component({
   selector: 'app-poster',
-  standalone: true,
-  imports:[CommonModule],
   templateUrl: './poster.component.html',
   styleUrls: ['./poster.component.scss']
 })

@@ -1,17 +1,10 @@
-import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PublishNotes } from '@lib/interfaces';
 import { CreatepostService } from '@lib/services/firebase/createpost.service';
-import { ArticleComponent } from './article/article.component';
 
 @Component({
   selector: 'articles',
-  standalone: true,
-  imports: [
-    CommonModule,
-    ArticleComponent
-  ],
   templateUrl: './articles.component.html',
   styleUrls: ['./articles.component.css']
 })
