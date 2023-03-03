@@ -14,17 +14,18 @@ import { initializeApp } from '@firebase/app';
 import { getFirestore } from '@firebase/firestore';
 import { MaterialModule } from '@lib/material/material.module';
 import { CreatepostService } from '@lib/services/firebase/createpost.service';
-import { ArticleComponent } from './article/article.component';
+import { ArticleComponent, ContainerComponent } from './article/article.component';
 import { EditComponent } from './edit/edit.component';
 import { EditorComponent } from './editor/editor.component';
 import { PosterComponent } from './poster/poster.component';
+import { ShellComponent } from './shell.component';
 import { ViewerComponent } from './viewer/viewer.component';
-import { ArticlesComponent } from './webshell.component';
 
 @NgModule({
   declarations: [
-    ArticlesComponent,
+    ShellComponent,
     ArticleComponent,
+    ContainerComponent,
     EditComponent,
     EditorComponent,
     PosterComponent,
@@ -44,20 +45,29 @@ import { ArticlesComponent } from './webshell.component';
     RouterModule.forChild([
       {
         path: '',
-        component: ArticlesComponent,
+        component: ShellComponent,
         data: {
           title: 'blog',
           description:
             'Angular starter for enterprise-grade front-end projects, built under a clean architecture that helps to scale and maintain a fast workflow.',
           robots: 'index, follow',
         },
-        children: [],
-      },
+        children: [
+          {
+            path: 'post',
+            component: ContainerComponent
+          },
+          {
+            path: 'publish',
+            component: EditorComponent
+          }
+        ]
+      }
     ]),
   ],
   providers: [
-    CreatepostService,
-
+    CreatepostService
   ],
+  bootstrap: [ShellComponent]
 })
 export class StoryModule {}

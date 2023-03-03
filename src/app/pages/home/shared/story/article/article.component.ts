@@ -1,8 +1,8 @@
-import { CommonModule } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { IArticleMapper, PublishNotes } from '@lib/interfaces';
 import { ArticleMapper } from '@lib/mapper/article.mapper';
+import { CreatepostService } from '@lib/services/firebase/createpost.service';
 
 @Component({
   selector: 'article',
@@ -26,5 +26,21 @@ export class ArticleComponent implements OnInit {
 
   public onBtnActionClicked(id: string) {
     this.router.navigate(['/archives/post'], { queryParams: { page: id}});
+  }
+}
+
+@Component({
+  templateUrl: './container.component.html'
+})
+export class ContainerComponent implements OnInit {
+  public articles: PublishNotes[] = [];
+  constructor(public router: Router, public postServ: CreatepostService) {
+    //..
+  }
+
+  ngOnInit(): void {
+    this.postServ.getArticlesFromFirebase().then((res) => {
+      this.articles = res;
+    })
   }
 }

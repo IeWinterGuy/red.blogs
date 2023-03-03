@@ -1,23 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { PublishNotes } from '@lib/interfaces';
 import { CreatepostService } from '@lib/services/firebase/createpost.service';
 
 @Component({
   selector: 'articles',
-  templateUrl: './articles.component.html',
-  styleUrls: ['./articles.component.css']
+  templateUrl: './shell.component.html'
 })
-export class ArticlesComponent implements OnInit {
+export class ShellComponent {
   public articles: PublishNotes[] = [];
   constructor(public router: Router, public postServ: CreatepostService) {
     //..
   }
-
-  ngOnInit(): void {
-    this.postServ.getArticlesFromFirebase().then((res) => {
-      this.articles = res;
-    })
-  }
-
 }

@@ -23,7 +23,7 @@ export const ROUTES: Route[] = [
         component: AboutComponent
       },
       {
-        path: 'story',
+        path: 'stories',
         loadChildren: async () => (await import('@pages/home/shared/story/stories.module')).StoryModule,
       },
       {
