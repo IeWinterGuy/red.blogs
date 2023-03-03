@@ -15,11 +15,11 @@ import { getFirestore } from '@firebase/firestore';
 import { MaterialModule } from '@lib/material/material.module';
 import { CreatepostService } from '@lib/services/firebase/createpost.service';
 import { ArticleComponent } from './article/article.component';
-import { ArticlesComponent } from './articles.component';
 import { EditComponent } from './edit/edit.component';
 import { EditorComponent } from './editor/editor.component';
 import { PosterComponent } from './poster/poster.component';
 import { ViewerComponent } from './viewer/viewer.component';
+import { ArticlesComponent } from './webshell.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +44,7 @@ import { ViewerComponent } from './viewer/viewer.component';
     RouterModule.forChild([
       {
         path: '',
-        component: EditorComponent,
+        component: ArticlesComponent,
         data: {
           title: 'blog',
           description:
@@ -60,4 +60,4 @@ import { ViewerComponent } from './viewer/viewer.component';
 
   ],
 })
-export class ArticlesModule {}
+export class StoryModule {}

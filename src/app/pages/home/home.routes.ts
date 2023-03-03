@@ -23,13 +23,12 @@ export const ROUTES: Route[] = [
         component: AboutComponent
       },
       {
-        path: 'blog',
-        loadChildren: async () => (await import('@pages/home/shared/blogs/articles.module')).ArticlesModule,
+        path: 'story',
+        loadChildren: async () => (await import('@pages/home/shared/story/stories.module')).StoryModule,
       },
       {
         path: 'publish',
-        loadComponent: async () => (await import('@pages/home/shared/blogs/editor/editor.component')).EditorComponent,
-        // loadChildren: async () => (await import('@pages/home/shared/articles/articles.module')).ArticlesModule,
+        loadComponent: async () => (await import('@pages/home/shared/story/editor/editor.component')).EditorComponent
       },
       {
         path: 'support',
