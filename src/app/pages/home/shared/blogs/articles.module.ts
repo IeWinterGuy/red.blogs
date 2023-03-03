@@ -17,7 +17,7 @@ import { CreatepostService } from '@lib/services/firebase/createpost.service';
 import { ArticleComponent } from './article/article.component';
 import { ArticlesComponent } from './articles.component';
 import { EditComponent } from './edit/edit.component';
-import { PostComponent } from './post/post.component';
+import { EditorComponent } from './editor/editor.component';
 import { PosterComponent } from './poster/poster.component';
 import { ViewerComponent } from './viewer/viewer.component';
 
@@ -26,7 +26,7 @@ import { ViewerComponent } from './viewer/viewer.component';
     ArticlesComponent,
     ArticleComponent,
     EditComponent,
-    PostComponent,
+    EditorComponent,
     PosterComponent,
     ViewerComponent,
   ],
@@ -44,7 +44,7 @@ import { ViewerComponent } from './viewer/viewer.component';
     RouterModule.forChild([
       {
         path: '',
-        component: PostComponent,
+        component: EditorComponent,
         data: {
           title: 'blog',
           description:

@@ -1,13 +1,10 @@
 import { Dialog } from '@angular/cdk/dialog';
-import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { collectionData } from '@angular/fire/firestore';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { AuthService } from '@auth0/auth0-angular';
 import EditorJS from '@editorjs/editorjs';
 import { IUser, PublishNotes } from '@lib/interfaces';
-import { MaterialModule } from '@lib/material/material.module';
 import { CreatepostService } from '@lib/services/firebase/createpost.service';
 import { collection, Firestore } from 'firebase/firestore';
 import { debounceTime, Observable, skip } from 'rxjs';
@@ -15,11 +12,10 @@ import { EditComponent } from '../edit/edit.component';
 import { editorjsConfig } from '../editor.config';
 
 @Component({
-  selector: 'post',
-  templateUrl: './post.component.html',
-  styleUrls: ['./post.component.css']
+  templateUrl: './editor.component.html',
+  styleUrls: ['./editor.component.css']
 })
-export class PostComponent implements OnInit {
+export class EditorComponent implements OnInit {
   public editorData: unknown;
   public editor!: EditorJS;
   public editorObserver!: MutationObserver;
