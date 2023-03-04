@@ -31,11 +31,10 @@ body {
 }
 .ce-popover {
   &--opened{
-    min-width: 110px;
-    width: 110px;
+    @apply min-w-[146px] w-[146px] md:min-w-[110px] md:w-[unset] rounded;
   }
   &__items {
-    @apply grid grid-cols-3;
+    @apply grid grid-cols-3 grid-rows-2 md:grid-cols-3 md:grid-rows-1;
   }
   &__item {
     &-icon {
@@ -86,3 +85,12 @@ body {
 
 html, body { height: 100%; }
 body { margin: 0;}
+
+.mdc-evolution-chip-set__chips {
+  @apply flex flex-col #{!important};
+}
+
+input.mat-mdc-chip-input {
+  flex: 1 0 50px !important;
+  margin-left: 8px !important;
+}

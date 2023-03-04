@@ -1,20 +1,18 @@
-<main [formGroup]="PublicationForm"  class="relative flex items-center justify-center h-full overflow-auto bg-white max-auto">
+<main [formGroup]="PublicationForm"
+  class="relative flex items-center justify-center h-full overflow-auto bg-white max-auto">
   <div class="cards bg-slate-200">
     <div class="relative h-full px-5 py-8 bg-white md:px-10">
       <h3 class="mb-4 font-bold leading-tight tracking-normal text-gray-800 font-lg">Story Preview</h3>
       <mat-card class="h-[20%] w-full !shadow-none border !flex !justify-center !items-cente min-h-[200px]">
-        <button class="text-sm text-white transition duration-150 ease-in-out rounded focus:outline-none" (click)="openImgDrawer()">
+        <button class="text-sm text-white transition duration-150 ease-in-out rounded focus:outline-none"
+          (click)="openImgDrawer()">
           <img src="{{ posterImg }}" class="object-contain max-w-full max-h-full bg-contain rounded">
         </button>
       </mat-card>
-      <input
-      id="title"
-      formControlName="previewTitle"
-      class="flex items-center w-full h-10 pl-3 mt-2 mb-2 text-lg font-normal text-gray-600 border border-gray-300 rounded focus:outline-none focus:border focus:border-indigo-700"
+      <input id="title" formControlName="previewTitle"
+        class="flex items-center w-full h-10 pl-3 mt-2 mb-2 text-lg font-normal text-gray-600 border border-gray-300 rounded focus:outline-none focus:border focus:border-indigo-700"
         placeholder="Write a preview title" />
-      <textarea
-      formControlName="previewSubTitle"
-      class="
+      <textarea formControlName="previewSubTitle" class="
         form-control
         text-gray-500
         block
@@ -30,20 +28,20 @@
         ease-in-out
         m-0
         focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
-      "
-      id="exampleFormControlTextarea1"
-      rows="3"
-      placeholder="Write a preview subtitle"
-    ></textarea>
+      " id="exampleFormControlTextarea1" rows="3" placeholder="Write a preview subtitle"></textarea>
       <label for="name" class="text-xs font-normal leading-tight tracking-normal text-black">
-        Note: Changes here will affect how your story appears in public places like brew's homepage and in subscribers’ inboxes — not the contents of the story itself.
+        Note: Changes here will affect how your story appears in public places like brew's homepage and in subscribers’
+        inboxes — not the contents of the story itself.
       </label>
     </div>
   </div>
   <div class="relative cards bg-slate-300">
     <div class="absolute top-0 right-0 z-40 flex items-center justify-center w-8 h-8">
-      <button class="w-5 h-5 outline-none fill-current focus-visible:outline-none btn btn-circle min-h-fit" (click)="dialogClose()">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+      <button type="button" (click)="dialogClose()"
+        class="inline-flex items-center justify-center w-auto px-2 py-1 space-x-1 text-sm font-medium text-gray-800 transition bg-white border border-gray-200 rounded appearance-none cursor-pointer select-none hover:border-gray-300 hover:bg-gray-100 focus:border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-300">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
       </button>
     </div>
     <div class="relative h-full px-5 py-8 bg-white md:px-10">
@@ -52,22 +50,32 @@
         Add or change topics (up to 5) so readers know what your story is about
       </label>
       <mat-chip-grid #chipList aria-label="Fruit selection">
-        <mat-chip *ngFor="let fruit of tags" (removed)="remove(fruit)">
-          {{fruit.name}}
-          <button matChipRemove>
-            <mat-icon>cancel</mat-icon>
-          </button>
-        </mat-chip>
-        <input placeholder="Add tags..." class="flex items-center h-10 pl-3 !my-4 text-sm font-normal text-gray-600 border border-gray-300 rounded focus:outline-none focus:border focus:border-indigo-700 w-full"
-               [matChipInputFor]="chipList"
-               [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
-               [matChipInputAddOnBlur]="true"
-               (matChipInputTokenEnd)="add($event)"
-               [disabled]="tags.length > 4">
+        <div>
+          <mat-chip *ngFor="let fruit of tags" (removed)="remove(fruit)">
+            {{fruit.name}}
+            <button matChipRemove>
+              <mat-icon>cancel</mat-icon>
+            </button>
+          </mat-chip>
+        </div>
+        <div class="w-full space-y-0.5">
+          <input
+            id="tags" type="text" placeholder="Add tags..."
+            class="block w-full my-2 text-sm transition border-gray-200 rounded focus:border-black focus:ring-black disabled:cursor-not-allowed disabled:bg-gray-200 disabled:opacity-75"
+            [matChipInputFor]="chipList"
+            [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+            [matChipInputAddOnBlur]="true"
+            (matChipInputTokenEnd)="add($event)"
+            [disabled]="tags.length > 4">
+        </div>
       </mat-chip-grid>
-      <div class="flex items-center justify-start w-full">
-          <button class="px-8 py-2 text-sm text-white transition duration-150 ease-in-out bg-indigo-700 rounded focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 hover:bg-indigo-600" (click)="publishArticle()">Publish</button>
-          <button class="px-8 py-2 ml-3 text-sm text-gray-600 transition duration-150 ease-in-out bg-gray-100 border rounded focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 hover:border-gray-400 hover:bg-gray-300 [disabled]='true'">Schedule for later</button>
+      <div class="flex items-center justify-between w-full">
+        <button
+          class="px-8 py-2 text-sm text-white transition duration-150 ease-in-out bg-indigo-700 rounded focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 hover:bg-indigo-600"
+          (click)="publishArticle()">Publish</button>
+        <button
+          class="px-8 py-2 ml-3 text-sm text-gray-600 transition duration-150 ease-in-out bg-gray-100 border rounded focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 hover:border-gray-400 hover:bg-gray-300 [disabled]='true'">Schedule
+          for later</button>
       </div>
     </div>
   </div>

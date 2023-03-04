@@ -1,9 +1,9 @@
-<div class="block w-full overflow-auto no-scrollbar">
+<div class="block w-full p-2 overflow-auto no-scrollbar md:p-0">
   <div class="flex justify-center w-full">
     <div class="w-full">
       <div class="flex items-center justify-between w-full h-40">
-        <div class="flex text-3xl font-semibold capitalize select-none justify-evenly">
-          <span class="mb-1 !text-5xl">Your Story</span>
+        <div class="flex text-5xl font-thin capitalize select-none justify-evenly">
+          <span class="mb-1 pop">Your Story</span>
         </div>
       </div>
     </div>
@@ -12,27 +12,20 @@
     <div class="flex justify-center w-full">
       <div class="w-full">
         <div class="block">
-          <mat-accordion>
-            <mat-expansion-panel hideToggle [expanded]="true" class="!shadow-none border">
-              <mat-expansion-panel-header>
-                <mat-panel-title class="items-center justify-between">
-                  <div>
-                    <span class="text-slate-400 capitalize !text-xs !font-thin pl-1" *ngIf="auth.user$ | async as user">drafted in {{user?.nickname}}</span>
-                  </div>
-                  <button class="btn btn-square btn-outline btn-sm !btn-ghost" (click)="saveEditorData(); $event.stopPropagation()" matTooltip="Post It">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
-                      <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
-                    </svg>
-                  </button>
-                </mat-panel-title>
-              </mat-expansion-panel-header>
-              <div id="editorjs" class="w-full h-auto rounded-md min-h-[100px] focus-visible:outline-none"></div>
-            </mat-expansion-panel>
-          </mat-accordion>
+          <section class="flex flex-col rounded">
+            <div class="flex justify-between p-2 border-0 rounded-t md:border md:border-b-0">
+              <div>
+                <span class="pl-1 text-xs text-gray-400 capitalize"
+                  *ngIf="auth.user$ | async as user">draft in {{user?.nickname}}</span>
+              </div>
+              <button (click)="saveEditorData(); $event.stopPropagation()" type="submit"
+                class="inline-flex justify-center px-4 py-2 text-sm font-medium text-white bg-black border border-transparent rounded hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-transparent focus:ring-offset-2">Publish</button>
+            </div>
+
+            <div id="editorjs" class="border-0 md:border-l h-auto min-h-[100px] focus-visible:outline-none mat-typography"></div>
+          </section>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-
