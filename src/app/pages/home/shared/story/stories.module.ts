@@ -12,6 +12,7 @@ import { RouterModule } from '@angular/router';
 import { environment } from '@env/environment';
 import { initializeApp } from '@firebase/app';
 import { getFirestore } from '@firebase/firestore';
+import { ContenteditableValueAccessor } from '@lib/directives/cvcontent.directive';
 import { MaterialModule } from '@lib/material/material.module';
 import { CreatepostService } from '@lib/services/firebase/createpost.service';
 import { ArticleComponent, ContainerComponent } from './article/article.component';
@@ -30,6 +31,8 @@ import { ViewerComponent } from './viewer/viewer.component';
     EditorComponent,
     PosterComponent,
     ViewerComponent,
+
+    ContenteditableValueAccessor
   ],
   imports: [
     CommonModule,

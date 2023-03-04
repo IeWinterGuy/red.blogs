@@ -1,7 +1,7 @@
 import { Dialog, DialogRef, DIALOG_DATA } from '@angular/cdk/dialog';
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { Component, Inject, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { MatChipInputEvent } from '@angular/material/chips';
 import { Router } from '@angular/router';
 import { IPublicationHighlights, PublishNotes, Tag } from '@lib/interfaces';
@@ -9,9 +9,19 @@ import { PublishMapper } from '@lib/mapper/publish.mapper';
 import { CreatepostService } from '@lib/services/firebase/createpost.service';
 import { PosterComponent } from '../poster/poster.component';
 
+import { ContenteditableValueAccessor } from '@lib/directives/cvcontent.directive';
+
+
 @Component({
   templateUrl: './edit.component.html',
   styleUrls: ['./edit.component.scss'],
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: ContenteditableValueAccessor,
+      multi: true
+    }
+  ]
 })
 export class EditComponent implements OnInit {
   public publicationHighlights!: IPublicationHighlights;

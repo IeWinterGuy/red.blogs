@@ -9,27 +9,19 @@
           <img src="{{ posterImg }}" class="object-contain max-w-full max-h-full bg-contain rounded" />
         </button>
       </mat-card>
-      <input id="title" formControlName="previewTitle" class="
-          flex
-          items-center
-          w-full
-          h-10
-          pl-3
-          mt-2
-          mb-2
-          text-lg
-          font-normal
-          text-gray-600
-          border border-gray-300
-          rounded
-          focus:outline-none focus:border focus:border-indigo-700
-        " placeholder="Write a preview title" />
-        
+      <div formControlName="previewTitle"
+          class="!text-lg !font-semibold customTitleControl-field u-minHeight20 u-width100pct u-hideOutline js-customTitleControlSubtitle editable inlineError inlineError--maxLength display-char-count inlineError--muted"
+          id="editor" g_editable="true" role="textbox"
+          contenteditable
+          data-default-value="Write a preview subtitle…" data-length="140" data-max-length="140" data-chars-remaining="0">
+        <p name="txtarea" class="text-lg graf graf--p is-selected"></p>
+      </div>
       <div formControlName="previewSubTitle"
-        class="customTitleControl-field u-minHeight20 u-width100pct u-hideOutline js-customTitleControlSubtitle editable inlineError inlineError--maxLength display-char-count inlineError--muted"
-        id="editor_49" g_editable="true" role="textbox" contenteditable="true"
-        data-default-value="Write a preview subtitle…" data-length="140" data-max-length="140" data-chars-remaining="0">
-        <p name="48cd" class="graf graf--p is-selected"></p>
+          class="customTitleControl-field u-minHeight20 u-width100pct u-hideOutline js-customTitleControlSubtitle editable inlineError inlineError--maxLength display-char-count inlineError--muted"
+          id="editor" g_editable="true" role="textbox"
+          contenteditable
+          data-default-value="Write a preview subtitle…" data-length="140" data-max-length="140" data-chars-remaining="0">
+        <p name="txtarea" class="graf graf--p is-selected"></p>
       </div>
       <label for="name" class="text-xs font-normal leading-tight tracking-normal text-black">
         Note: Changes here will affect how your story appears in public places like brew's homepage and in
@@ -39,27 +31,7 @@
   </div>
   <div class="relative cards bg-slate-300">
     <div class="absolute top-0 right-0 z-40 flex items-center justify-center w-8 h-8">
-      <button type="button" (click)="dialogClose()" class="
-          inline-flex
-          items-center
-          justify-center
-          w-auto
-          px-2
-          py-1
-          space-x-1
-          text-sm
-          font-medium
-          text-gray-800
-          transition
-          bg-white
-          border border-gray-200
-          rounded
-          appearance-none
-          cursor-pointer
-          select-none
-          hover:border-gray-300 hover:bg-gray-100
-          focus:border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-300
-        ">
+      <button type="button" (click)="dialogClose()" class="inline-flex items-center justify-center w-auto px-2 py-1 space-x-1 text-sm font-medium text-gray-800 transition bg-white border border-gray-200 rounded appearance-none cursor-pointer select-none hover:border-gray-300 hover:bg-gray-100 focus:border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-300">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
         </svg>
@@ -98,37 +70,11 @@
             [matChipInputAddOnBlur]="true" (matChipInputTokenEnd)="add($event)" [disabled]="tags.length > 4" />
         </div>
       </mat-chip-grid>
-      <div class="flex flex-row-reverse items-center justify-start gap-2 w-full">
-        <button type="submit" class="
-            inline-flex
-            justify-center
-            px-4
-            py-2
-            text-sm
-            font-medium
-            text-white
-            bg-black
-            border border-transparent
-            rounded
-            hover:bg-slate-700
-            focus:outline-none focus:ring-2 focus:ring-transparent focus:ring-offset-2
-          ">
+      <div class="flex flex-row-reverse items-center justify-start w-full gap-2">
+        <button type="submit" class="inline-flex justify-center px-4 py-2 text-sm font-medium text-white bg-black border border-transparent rounded hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-transparent focus:ring-offset-2">
           Publish
         </button>
-        <button type="submit" class="
-            inline-flex
-            justify-center
-            px-4
-            text-gray-600
-            py-2
-            text-sm
-            font-medium
-            hover:border-gray-400 hover:bg-gray-300
-            bg-gray-100
-            border border-transparent
-            rounded
-            focus:outline-none focus:ring-2 focus:ring-transparent focus:ring-offset-2
-          " [disabled]="true">
+        <button type="submit" class="inline-flex justify-center px-4 py-2 text-sm font-medium text-gray-600 bg-gray-100 border border-transparent rounded hover:border-gray-400 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-transparent focus:ring-offset-2" [disabled]="true">
           Schedule
         </button>
       </div>
