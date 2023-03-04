@@ -1,5 +1,5 @@
-import { Dialog } from '@angular/cdk/dialog';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { AuthService } from '@auth0/auth0-angular';
 import EditorJS from '@editorjs/editorjs';
@@ -28,7 +28,7 @@ export class EditorComponent implements OnInit {
     public postserv: CreatepostService,
     public auth: AuthService,
     private _snackBar: MatSnackBar,
-    private bareDialog: Dialog) {
+    private bareDialog: MatDialog) {
     this.user = <IUser>{};
 
     // auth.getIdTokenClaims().subscribe((res) => {
@@ -82,7 +82,7 @@ export class EditorComponent implements OnInit {
     this.editor.save().then((outputData) => {
       (outputData as PublishNotes).author = this.user?.name;
       if(outputData.blocks.length > 0) {
-        const dialogRef = this.bareDialog.open<string>(EditComponent, {
+        const dialogRef = this.bareDialog.open(EditComponent, {
           width: '100vw',
           height:'100%',
           minHeight: '100vh',
@@ -92,7 +92,7 @@ export class EditorComponent implements OnInit {
           disableClose: true
         });
 
-        dialogRef.closed.subscribe((result) => {
+        dialogRef.afterClosed().subscribe((result) => {
           console.log(`Dialog result: ${result}`);
         });
       } else {

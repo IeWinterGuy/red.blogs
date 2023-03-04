@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
 import { A11yModule } from '@angular/cdk/a11y';
@@ -41,7 +40,6 @@ const globalRippleConfig: RippleGlobalOptions = {
 };
 @NgModule({
   declarations: [],
-  imports: [CommonModule],
   exports: [
     A11yModule,
     CdkAccordionModule,
