@@ -1,13 +1,8 @@
 <div class="block w-full overflow-auto no-scrollbar">
   <div class="flex justify-center w-full">
-    <div class="w-full max-w-4xl">
-      <div class="flex items-center justify-between w-full h-40 max-w-4xl">
+    <div class="w-full">
+      <div class="flex items-center justify-between w-full h-40">
         <div class="flex text-3xl font-semibold capitalize select-none justify-evenly">
-          <button class="mr-5 border-transparent btn btn-circle btn-outline btn-md" routerLink="/article">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-            </svg>
-          </button>
           <span class="mb-1 !text-5xl">Your Story</span>
         </div>
       </div>
@@ -15,8 +10,8 @@
   </div>
   <div class="block w-full">
     <div class="flex justify-center w-full">
-      <div class="w-full max-w-4xl mx-4">
-        <div class="block pb-5">
+      <div class="w-full">
+        <div class="block">
           <mat-accordion>
             <mat-expansion-panel hideToggle [expanded]="true" class="!shadow-none border">
               <mat-expansion-panel-header>
@@ -31,7 +26,7 @@
                   </button>
                 </mat-panel-title>
               </mat-expansion-panel-header>
-              <div id="editorjs" class="w-full h-auto p-2 rounded-md min-h-[100px] focus-visible:outline-none"></div>
+              <div id="editorjs" class="w-full h-auto rounded-md min-h-[100px] focus-visible:outline-none"></div>
             </mat-expansion-panel>
           </mat-accordion>
         </div>

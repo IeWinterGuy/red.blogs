@@ -31,10 +31,12 @@ export class EditorComponent implements OnInit {
     private bareDialog: Dialog) {
     this.user = <IUser>{};
 
-    auth.getIdTokenClaims().subscribe((res) => {
-      const user_id = (res?.['sub'] as string).split('|')[1];
-      this.user_id = user_id;
-    })
+    // auth.getIdTokenClaims().subscribe((res) => {
+    //   const value = (res?.['sub'] as string).split('|');
+    //   console.log(value)
+    //   const user_id = value
+    //   this.user_id = user_id;
+    // })
   }
 
   ngOnInit(): void {

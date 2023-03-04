@@ -32,13 +32,12 @@ body {
 .ce-popover {
   &--opened{
     min-width: 110px;
+    width: 110px;
   }
   &__items {
-    display: flex;
-    flex-wrap: wrap;
+    @apply grid grid-cols-3;
   }
   &__item {
-    flex: 0 0 3;
     &-icon {
       margin: unset;
     }
