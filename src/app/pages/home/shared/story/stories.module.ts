@@ -13,7 +13,9 @@ import { environment } from '@env/environment';
 import { initializeApp } from '@firebase/app';
 import { getFirestore } from '@firebase/firestore';
 import { ContenteditableValueAccessor } from '@lib/directives/cvcontent.directive';
+import { TruncateTextDirective } from '@lib/directives/truncate-text.directive';
 import { MaterialModule } from '@lib/material/material.module';
+import { ShortenStringPipe } from '@lib/pipes/ShortenPipe.pipe';
 import { CreatepostService } from '@lib/services/firebase/createpost.service';
 import { ArticleComponent, ContainerComponent } from './article/article.component';
 import { EditComponent } from './edit/edit.component';
@@ -32,7 +34,8 @@ import { ViewerComponent } from './viewer/viewer.component';
     PosterComponent,
     ViewerComponent,
 
-    ContenteditableValueAccessor
+    ContenteditableValueAccessor,
+    TruncateTextDirective
   ],
   imports: [
     CommonModule,
@@ -69,7 +72,7 @@ import { ViewerComponent } from './viewer/viewer.component';
     ]),
   ],
   providers: [
-    CreatepostService
+    CreatepostService, ShortenStringPipe
   ],
   bootstrap: [ShellComponent]
 })

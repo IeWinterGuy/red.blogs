@@ -21,7 +21,7 @@ main {
   }
 
   @media screen and (max-width: $card-snap) {
-    flex-direction: column-reverse;
+    flex-direction: column;
     .cards {
       @apply w-full;
     }

@@ -1,3 +1,4 @@
+import { Dialog } from '@angular/cdk/dialog';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -18,7 +19,6 @@ export class EditorComponent implements OnInit {
   public editor!: EditorJS;
   public editorObserver!: MutationObserver;
   public user!: IUser;
-  private user_id!: string;
 
   public subscriptions = {
     user: null
@@ -28,15 +28,8 @@ export class EditorComponent implements OnInit {
     public postserv: CreatepostService,
     public auth: AuthService,
     private _snackBar: MatSnackBar,
-    private bareDialog: MatDialog) {
+    private bareDialog: Dialog) {
     this.user = <IUser>{};
-
-    // auth.getIdTokenClaims().subscribe((res) => {
-    //   const value = (res?.['sub'] as string).split('|');
-    //   console.log(value)
-    //   const user_id = value
-    //   this.user_id = user_id;
-    // })
   }
 
   ngOnInit(): void {
@@ -89,10 +82,10 @@ export class EditorComponent implements OnInit {
           maxWidth: 'unset',
           panelClass: ['my-outlined-dialog', 'no-scrollbar', 'overflow-container', 'rounded-none'],
           data: outputData,
-          disableClose: true
+          disableClose: false
         });
 
-        dialogRef.afterClosed().subscribe((result) => {
+        dialogRef.closed.subscribe((result) => {
           console.log(`Dialog result: ${result}`);
         });
       } else {

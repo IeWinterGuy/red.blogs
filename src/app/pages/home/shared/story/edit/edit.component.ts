@@ -10,6 +10,7 @@ import { CreatepostService } from '@lib/services/firebase/createpost.service';
 import { PosterComponent } from '../poster/poster.component';
 
 import { ContenteditableValueAccessor } from '@lib/directives/cvcontent.directive';
+import { ShortenStringPipe } from '@lib/pipes/ShortenPipe.pipe';
 
 
 @Component({
@@ -58,7 +59,7 @@ export class EditComponent implements OnInit {
         }
 
         if (res.content) {
-          this.PublicationForm.get('previewSubTitle')?.setValue(res.content);
+          this.PublicationForm.get('previewSubTitle')?.setValue(new ShortenStringPipe().transform(res.content));
         }
       }
 
@@ -98,7 +99,7 @@ export class EditComponent implements OnInit {
 
   public openImgDrawer(): void {
     const dialogRef = this.bareDialog.open<string>(PosterComponent, {
-      width: 'auto',
+      width: 'w-auto',
       height: '60vh',
       maxHeight: '400px',
       maxWidth: 'unset',
