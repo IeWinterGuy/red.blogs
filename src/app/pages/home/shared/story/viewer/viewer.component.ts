@@ -21,6 +21,7 @@ export class ViewerComponent implements OnInit {
     const url = this.router.snapshot.queryParams['page'];
     if(url)
     this.postserv.getPublicationFromFirebase(url).then((res) => {
+      console.log(res)
       editorjsConfigReadOnly.data = res;
       this.editor = new EditorJS(
         {

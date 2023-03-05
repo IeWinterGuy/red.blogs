@@ -66,6 +66,10 @@ import { ViewerComponent } from './viewer/viewer.component';
           {
             path: 'publish',
             component: EditorComponent
+          },
+          {
+            path: 'view',
+            component: ViewerComponent
           }
         ]
       }

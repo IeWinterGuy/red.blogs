@@ -19,13 +19,14 @@ export class ArticleComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    if (this.userNotesAndArticlesInfo?.id)
     this.postMapper.mapPublicationHighlights(this.userNotesAndArticlesInfo).then((res) => {
       this.publicationHighlights = res;
     })
   }
 
   public onBtnActionClicked(id: string) {
-    this.router.navigate(['/archives/post'], { queryParams: { page: id}});
+    this.router.navigate(['/archives/stories/view'], { queryParams: { page: id}});
   }
 }
 

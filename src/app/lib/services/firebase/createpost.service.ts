@@ -95,7 +95,6 @@ export class CreatepostService {
       const starCountRef = dbref(db, '/' + id);
       onValue(starCountRef, (snapshot) => {
         const userCreatedArticles = snapshot.val();
-        console.log(userCreatedArticles)
         resolve(snapshot.val())
       });
     })
