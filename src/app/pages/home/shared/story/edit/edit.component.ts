@@ -100,14 +100,14 @@ export class EditComponent implements OnInit {
   public openImgDrawer(): void {
     const dialogRef = this.bareDialog.open<string>(PosterComponent, {
       width: 'w-auto',
-      height: '60vh',
-      maxHeight: '400px',
       maxWidth: 'unset',
       panelClass: [
         'my-outlined-dialog',
         'no-scrollbar',
         'overflow-container',
         'rounded-none',
+        'md:h-[60vh]',
+        'h-full'
       ],
       data: {
         selected: this.posterImg,

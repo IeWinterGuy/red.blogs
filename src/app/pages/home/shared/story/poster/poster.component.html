@@ -1,6 +1,5 @@
 <main class="relative flex flex-wrap items-center justify-center bg-white columns-1 md:column-2 max-auto">
-  <div class="relative cards md:mr-2">
-
+  <div class="relative hidden cards md:mr-2 md:block">
     <div class="relative h-full bg-white">
       <mat-card class="h-full w-full !shadow-none min-h-[200px] border-dashed border border-slate-500">
         <div class="absolute top-0 right-0 z-40 flex justify-end md:relative">
@@ -17,6 +16,13 @@
     </div>
   </div>
   <div class="relative cards">
+    <div class="absolute top-0 right-0 z-40 flex justify-end md:relative md:hidden">
+      <button type="button" (click)="dialogClose()" class="inline-flex items-center justify-center w-auto h-8 px-2 py-1 m-2 space-x-1 text-sm font-medium text-gray-800 transition bg-white border border-gray-200 rounded appearance-none cursor-pointer select-none hover:border-gray-300 hover:bg-gray-100 focus:border-gray-300 focus:outline-none focus:ring-2 focus:ring-transparent">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
     <div class="relative h-full overflow-auto bg-white rounded no-scrollbar">
       <div class="grid-cols-1 space-y-2 lg:space-y-0 lg:grid lg:gap-2 lg:grid-rows-1">
         <div class="relative w-full rounded" *ngFor="let img of data.imgList;let i = index">
