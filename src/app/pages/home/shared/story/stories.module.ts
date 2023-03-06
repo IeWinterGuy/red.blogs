@@ -60,7 +60,11 @@ import { ViewerComponent } from './viewer/viewer.component';
         },
         children: [
           {
-            path: 'post',
+            path: '',
+            component: ContainerComponent
+          },
+          {
+            path: 'posts',
             component: ContainerComponent
           },
           {
