@@ -32,6 +32,9 @@
       ],
       "@env/*": [
         "src/environments/*"
+      ],
+      "@theme/*":[
+        "src/theme/*"
       ]
     },
     "resolveJsonModule": true,

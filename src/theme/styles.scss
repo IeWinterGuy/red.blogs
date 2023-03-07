@@ -13,71 +13,13 @@
 /* utilities */
 @import './tailwindcss/utilities.css';
 @import './utilities/border.css';
+@import './lib/code.editorjs.css';
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,700;1,100;1,200&display=swap');
 
 body {
   @apply bg-white;
   font-family: 'Poppins', sans-serif !important;
-}
-
-
-//external lib
-.cdx-search-field {
-  display: none;
-}
-.ce-toolbar__actions {
-  margin-right: 0.7rem;
-}
-.ce-popover {
-  &--opened{
-    @apply min-w-[146px] w-[146px] md:min-w-[110px] md:w-[unset] rounded;
-  }
-  &__items {
-    @apply grid grid-cols-3 grid-rows-2 md:grid-cols-3 md:grid-rows-1;
-  }
-  &__item {
-    &-icon {
-      margin: unset;
-    }
-
-    &-label{
-      display: none;
-    }
-  }
-}
-
-.cdx-button {
-  @apply flex items-center justify-center;
-  svg {
-    margin-right: 1rem;
-  }
-}
-.ce-block:first-child{
-  h1.ce-header {
-    font-size: 2rem !important;
-    font-weight: 500 !important;
-  }
-}
-
-
-// .ce-paragraph{
-
-//   font-size: large !important;
-//   font-weight: 400 !important;
-//   font-family: 'charter', Georgia, Cambria, "Times New Roman", Times, serif;
-// }
-
-.ce-block__content {
-  max-width: 736px !important;
-}
-
-.ce-toolbar__actions {
-  margin-right: 2.7rem !important;
-}
-
-.image-tool__caption {
-  @apply hidden #{!important};
 }
 
 .mdc-evolution-chip-set__chips {
