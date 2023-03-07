@@ -57,4 +57,15 @@ export class HomePage implements OnInit, OnDestroy {
     const isRouteActive = this.router.isActive("/archives/stories/publish", this.matchOptions)
     return !(isRouteActive);
   }
+
+  get isItViewPage() {
+    this.matchOptions = {
+      paths: 'exact',
+      matrixParams: 'exact',
+      queryParams: 'subset',
+      fragment: 'ignored'
+  };
+    const isRouteActive = this.router.isActive("/archives/stories/view", this.matchOptions)
+    return (isRouteActive);
+  }
 }

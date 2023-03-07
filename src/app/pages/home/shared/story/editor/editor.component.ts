@@ -21,6 +21,9 @@ export class EditorComponent implements OnInit {
   public editorObserver!: MutationObserver;
   public user!: IUser;
 
+  @ViewChild('editor', { static: true }) edithead!: ElementRef<HTMLDivElement>;
+  placeholder!: string | undefined;
+
   public subscriptions = {
     user: null
   }
@@ -57,6 +60,15 @@ export class EditorComponent implements OnInit {
         }
       }
     })
+
+    if(this.edithead) {
+      this.placeholder = this.edithead.nativeElement.dataset['placeholder'];
+
+      if (this.edithead.nativeElement.innerHTML === '') {
+        if(this.placeholder)
+          this.edithead.nativeElement.innerHTML = this.placeholder;
+      }
+    }
   }
 
   @ViewChild('editorjs')
@@ -96,6 +108,23 @@ export class EditorComponent implements OnInit {
       }
     })
 
+  }
+
+  onFocus() {
+    const value = this.edithead.nativeElement.innerHTML;
+
+    if (value === this.placeholder) {
+      this.edithead.nativeElement.innerHTML = '';
+    }
+  }
+
+  onBlur() {
+    const value = this.edithead.nativeElement.innerHTML;
+
+    if (value === '') {
+      if(this.placeholder)
+          this.edithead.nativeElement.innerHTML = this.placeholder;
+    }
   }
 
   ngOnDestroy(): void {
