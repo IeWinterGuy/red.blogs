@@ -9,6 +9,7 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { provideFirestore } from '@angular/fire/firestore';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { AuthGuard } from '@auth0/auth0-angular';
 import { environment } from '@env/environment';
 import { initializeApp } from '@firebase/app';
 import { getFirestore } from '@firebase/firestore';
@@ -69,7 +70,8 @@ import { ViewerComponent } from './viewer/viewer.component';
           },
           {
             path: 'publish',
-            component: EditorComponent
+            component: EditorComponent,
+            canActivate: [AuthGuard]
           },
           {
             path: 'view',

@@ -80,12 +80,6 @@ body {
   @apply hidden #{!important};
 }
 
-
-
-
-html, body { height: 100%; }
-body { margin: 0;}
-
 .mdc-evolution-chip-set__chips {
   @apply flex flex-col #{!important};
 }

@@ -1,16 +1,11 @@
 import { Routes } from '@angular/router';
-import { AuthGuard, NoAuthGuard } from '@lib/guards';
+import { AuthGuard } from '@lib/guards';
 
 export const routes: Routes = [
   {
     path: '',
     redirectTo: 'archives',
     pathMatch: 'full',
-  },
-  {
-    path: 'auth',
-    loadChildren: async () => (await import('@pages/auth/auth.routes')).ROUTES,
-    canLoad: [NoAuthGuard],
   },
   {
     path: 'archives',

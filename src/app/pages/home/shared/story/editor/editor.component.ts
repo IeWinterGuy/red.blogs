@@ -1,6 +1,6 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 import { Dialog } from '@angular/cdk/dialog';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { AuthService } from '@auth0/auth0-angular';
 import EditorJS from '@editorjs/editorjs';
@@ -9,6 +9,7 @@ import { CreatepostService } from '@lib/services/firebase/createpost.service';
 import { debounceTime, Observable, skip } from 'rxjs';
 import { EditComponent } from '../edit/edit.component';
 import { editorjsConfig } from '../editor.config';
+
 
 @Component({
   templateUrl: './editor.component.html',
@@ -32,7 +33,9 @@ export class EditorComponent implements OnInit {
     this.user = <IUser>{};
   }
 
+
   ngOnInit(): void {
+
     this.editor = new EditorJS(editorjsConfig)
 
     this.detectEditorChanges().pipe(
