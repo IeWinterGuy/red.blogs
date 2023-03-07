@@ -3,24 +3,23 @@
   <div class="mt-10 cards">
     <div class="relative h-full px-5 py-8 bg-white md:px-10">
       <h3 class="mb-4 font-bold leading-tight tracking-normal text-gray-800 font-lg">Story Preview</h3>
-      <mat-card class="h-[20%] w-full !shadow-none border !flex !justify-center !items-cente min-h-[200px] overflow-y-auto">
+      <div
+        class="h-[20%] w-full border border-dashed flex justify-center items-cente min-h-[200px] overflow-y-auto p-2 rounded overflow-x-auto">
         <button class="text-sm text-white transition duration-150 ease-in-out rounded focus:outline-none"
           (click)="openImgDrawer()">
           <img src="{{ posterImg }}" class="object-contain max-w-full max-h-full bg-contain rounded" />
         </button>
-      </mat-card>
+      </div>
       <div formControlName="previewTitle"
-          class="!text-lg !font-semibold customTitleControl-field u-minHeight20 u-width100pct u-hideOutline js-customTitleControlSubtitle editable inlineError inlineError--maxLength display-char-count inlineError--muted"
-          id="editor" g_editable="true" role="textbox"
-          contenteditable
-          data-default-value="Write a preview subtitle…" data-length="140" data-max-length="140" data-chars-remaining="0">
+        class="!text-lg !font-semibold customTitleControl-field u-minHeight20 u-width100pct u-hideOutline js-customTitleControlSubtitle editable inlineError inlineError--maxLength display-char-count inlineError--muted"
+        id="editor" g_editable="true" role="textbox" contenteditable data-default-value="Write a preview subtitle…"
+        data-length="140" data-max-length="140" data-chars-remaining="0">
         <p name="txtarea" class="text-lg graf graf--p is-selected"></p>
       </div>
       <div formControlName="previewSubTitle" appTruncateText
-          class="customTitleControl-field u-minHeight20 u-width100pct u-hideOutline js-customTitleControlSubtitle editable inlineError inlineError--maxLength display-char-count inlineError--muted"
-          id="editor" g_editable="true" role="textbox"
-          contenteditable
-          data-default-value="Write a preview subtitle…" data-length="140" data-max-length="140" data-chars-remaining="0">
+        class="customTitleControl-field u-minHeight20 u-width100pct u-hideOutline js-customTitleControlSubtitle editable inlineError inlineError--maxLength display-char-count inlineError--muted"
+        id="editor" g_editable="true" role="textbox" contenteditable data-default-value="Write a preview subtitle…"
+        data-length="140" data-max-length="140" data-chars-remaining="0">
         <p name="txtarea" class="graf graf--p is-selected"></p>
       </div>
       <label for="name" class="text-xs font-normal leading-tight tracking-normal text-black">
@@ -31,7 +30,8 @@
   </div>
   <div class="md:relative cards">
     <div class="absolute top-0 right-0 z-40 flex justify-end md:relative">
-      <button type="button" (click)="dialogClose()" class="inline-flex items-center justify-center w-auto h-8 px-2 py-1 m-2 space-x-1 text-sm font-medium text-gray-800 transition bg-white border border-gray-200 rounded appearance-none cursor-pointer select-none hover:border-gray-300 hover:bg-gray-100 focus:border-gray-300 focus:outline-none focus:ring-2 focus:ring-transparent">
+      <button type="button" (click)="dialogClose()"
+        class="inline-flex items-center justify-center w-auto h-8 px-2 py-1 m-2 space-x-1 text-sm font-medium text-gray-800 transition bg-white border border-gray-200 rounded appearance-none cursor-pointer select-none hover:border-gray-300 hover:bg-gray-100 focus:border-gray-300 focus:outline-none focus:ring-2 focus:ring-transparent">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
         </svg>
@@ -71,10 +71,13 @@
         </div>
       </mat-chip-grid>
       <div class="flex flex-row-reverse items-center justify-start w-full gap-2">
-        <button (click)="publishArticle()" type="submit" class="inline-flex justify-center px-4 py-2 text-sm font-medium text-white bg-black border border-transparent rounded hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-transparent focus:ring-offset-2">
+        <button (click)="publishArticle()" type="submit"
+          class="inline-flex justify-center px-4 py-2 text-sm font-medium text-white bg-black border border-transparent rounded hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-transparent focus:ring-offset-2">
           Publish
         </button>
-        <button type="submit" class="inline-flex justify-center px-4 py-2 text-sm font-medium text-gray-600 bg-gray-100 border border-transparent rounded hover:border-gray-400 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-transparent focus:ring-offset-2" [disabled]="true">
+        <button type="submit"
+          class="inline-flex justify-center px-4 py-2 text-sm font-medium text-gray-600 bg-gray-100 border border-transparent rounded hover:border-gray-400 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-transparent focus:ring-offset-2"
+          [disabled]="true">
           Schedule
         </button>
       </div>

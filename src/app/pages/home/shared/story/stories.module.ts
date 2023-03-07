@@ -47,8 +47,8 @@ import { ViewerComponent } from './viewer/viewer.component';
     AngularFireAuthModule,
     AngularFireStorageModule,
     provideFirebaseApp(() => initializeApp({ ...environment.firebaseConfig })),
-    provideFirestore(() => getFirestore()),
     AngularFireModule.initializeApp(environment.firebaseConfig),
+    provideFirestore(() => getFirestore()),
     RouterModule.forChild([
       {
         path: '',
@@ -82,7 +82,8 @@ import { ViewerComponent } from './viewer/viewer.component';
     ]),
   ],
   providers: [
-    CreatepostService, ShortenStringPipe
+    CreatepostService,
+    ShortenStringPipe
   ],
   bootstrap: [ShellComponent]
 })
