@@ -25,7 +25,7 @@
       <div class="w-full">
         <div class="block">
           <section class="flex flex-col rounded">
-            <div class="flex justify-between p-2 border-0 rounded-t md:border md:border-b-0">
+            <div class="flex justify-between p-2 border-0 border-dashed rounded-t md:border md:border-b-0">
               <div>
                 <span class="pl-1 text-xs text-gray-400 capitalize" *ngIf="auth.user$ | async as user">draft in
                   {{user?.nickname}}</span>
@@ -34,7 +34,7 @@
                 class="inline-flex justify-center px-4 py-2 text-sm font-medium text-white bg-black border border-transparent rounded hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-transparent focus:ring-offset-2">Publish</button>
             </div>
             <div id="editorjs"
-              class="border-0 md:border-l h-auto min-h-[100px] focus-visible:outline-none mat-typography"></div>
+              class="p-2 border-0 md:border-l border-dashed h-auto min-h-[100px] focus-visible:outline-none mat-typography"></div>
           </section>
         </div>
       </div>
