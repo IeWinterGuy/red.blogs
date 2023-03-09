@@ -43,7 +43,7 @@ export class EditComponent implements OnInit {
 
   constructor(
     public dialogRef: DialogRef<EditComponent>,
-    @Inject(DIALOG_DATA) public data: PublishNotes,
+    @Inject(DIALOG_DATA) public data: { outputData: PublishNotes; header: string; },
     public postMapper: PublishMapper,
     public bareDialog: Dialog,
     private fb: FormBuilder,
@@ -52,10 +52,10 @@ export class EditComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.postMapper.getPublicationHighlights(this.data).then((res) => {
+    this.postMapper.getPublicationHighlights(this.data.outputData).then((res) => {
       if (res) {
-        if (res.header) {
-          this.PublicationForm.get('previewTitle')?.setValue(res.header);
+        if (this.data.outputData) {
+          this.PublicationForm.get('previewTitle')?.setValue(this.data.header);
         }
 
         if (res.content) {
@@ -86,12 +86,12 @@ export class EditComponent implements OnInit {
 
   public publishArticle() {
     this.postMapper.postPublicationMapper(this.publicationHighlights, this.posterImg, this.tags, this.PublicationForm.value).then((res) => {
-      this.data.highlight = res;
+      this.data.outputData.highlight = res;
       // this.postserv.addPosts(this.data)
-      this.postserv.postToRTDatabase(this.data, res.id).then((res) => {
+      this.postserv.postToRTDatabase(this.data.outputData, res.id).then((res) => {
         if(res == 200) {
           this.dialogRef.close();
-          this.router.navigateByUrl('/article')
+          this.router.navigateByUrl('/archives/stories/posts')
         }
       })
     });

@@ -1,11 +1,8 @@
 <div class="block w-full p-2 overflow-auto no-scrollbar md:p-0">
   <div class="flex justify-center w-full">
     <div class="w-full">
-      <div class="flex items-center justify-between w-full mb-10">
-        <!-- <div class="flex text-5xl font-thin capitalize select-none justify-evenly">
-          <span class="mb-1 pop">Your Story</span>
-        </div> -->
-        <div placeholder="Story head"
+      <div class="flex items-center justify-between w-full mb-10" [formGroup]="editorForm">
+        <div formControlName="headline" placeholder="Story head"
               class="max-w-3xl w-full text-5xl !font-thin editor-title customTitleControl-field u-minHeight20 u-width100pct u-hideOutline js-customTitleControlSubtitle editable inlineError inlineError--maxLength display-char-count inlineError--muted"
               id="editor" role="textbox" contenteditable="true"
               data-placeholder="title..."

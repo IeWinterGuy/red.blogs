@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 import { Dialog } from '@angular/cdk/dialog';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { AuthService } from '@auth0/auth0-angular';
 import EditorJS from '@editorjs/editorjs';
@@ -21,7 +22,11 @@ export class EditorComponent implements OnInit {
   public editorObserver!: MutationObserver;
   public user!: IUser;
 
-  @ViewChild('editor', { static: true }) edithead!: ElementRef<HTMLDivElement>;
+  public editorForm!: FormGroup;
+
+  @ViewChild('headline', { static: true })
+  edithead!: ElementRef<HTMLInputElement>;
+
   placeholder!: string | undefined;
 
   public subscriptions = {
@@ -32,12 +37,17 @@ export class EditorComponent implements OnInit {
     public postserv: CreatepostService,
     public auth: AuthService,
     private _snackBar: MatSnackBar,
-    private bareDialog: Dialog) {
+    private bareDialog: Dialog,
+    private _formBuilder: FormBuilder) {
     this.user = <IUser>{};
   }
 
-
   ngOnInit(): void {
+    this.editorForm =  this._formBuilder.group({
+      headline: ['', {
+        updateOn: 'change'
+      }]
+    })
 
     this.editor = new EditorJS(editorjsConfig)
 
@@ -60,19 +70,7 @@ export class EditorComponent implements OnInit {
         }
       }
     })
-
-    if(this.edithead) {
-      this.placeholder = this.edithead.nativeElement.dataset['placeholder'];
-
-      if (this.edithead.nativeElement.innerHTML === '') {
-        if(this.placeholder)
-          this.edithead.nativeElement.innerHTML = this.placeholder;
-      }
-    }
   }
-
-  @ViewChild('editorjs')
-  div!: ElementRef<HTMLInputElement>;
 
   detectEditorChanges(): Observable <unknown> {
     return new Observable(observer => {
@@ -96,7 +94,7 @@ export class EditorComponent implements OnInit {
           minHeight: '100vh',
           maxWidth: 'unset',
           panelClass: ['my-outlined-dialog', 'no-scrollbar', 'overflow-container', 'rounded-none'],
-          data: outputData,
+          data: {outputData, header: (this.editorForm.controls['headline'].value)},
           disableClose: false
         });
 
@@ -108,23 +106,6 @@ export class EditorComponent implements OnInit {
       }
     })
 
-  }
-
-  onFocus() {
-    const value = this.edithead.nativeElement.innerHTML;
-
-    if (value === this.placeholder) {
-      this.edithead.nativeElement.innerHTML = '';
-    }
-  }
-
-  onBlur() {
-    const value = this.edithead.nativeElement.innerHTML;
-
-    if (value === '') {
-      if(this.placeholder)
-          this.edithead.nativeElement.innerHTML = this.placeholder;
-    }
   }
 
   ngOnDestroy(): void {
