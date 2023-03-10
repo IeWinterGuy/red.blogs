@@ -10,15 +10,22 @@ import { provideFirestore } from '@angular/fire/firestore';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { AuthGuard } from '@auth0/auth0-angular';
+
 import { environment } from '@env/environment';
+
 import { initializeApp } from '@firebase/app';
 import { getFirestore } from '@firebase/firestore';
+
 import { ContenteditableValueAccessor } from '@lib/directives/cvcontent.directive';
 import { PlaceholderDirective } from '@lib/directives/placeholder.directive';
 import { TruncateTextDirective } from '@lib/directives/truncate-text.directive';
+
 import { MaterialModule } from '@lib/material/material.module';
+
 import { ShortenStringPipe } from '@lib/pipes/ShortenPipe.pipe';
+
 import { CreatepostService } from '@lib/services/firebase/createpost.service';
+
 import { ArticleComponent, ContainerComponent } from './article/article.component';
 import { EditComponent } from './edit/edit.component';
 import { EditorComponent } from './editor/editor.component';
@@ -73,7 +80,7 @@ import { ViewerComponent } from './viewer/viewer.component';
           {
             path: 'publish',
             component: EditorComponent,
-            // canActivate: [AuthGuard]
+            canActivate: [AuthGuard]
           },
           {
             path: 'view',
